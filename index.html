@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANUJSTOR</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#05010f;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:400px;
+height:400px;
+background:#7b2cff;
+filter:blur(180px);
+top:100px;
+right:-100px;
+opacity:.4;
+z-index:-1;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:rgba(10,10,20,.8);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #7b2cff;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+color:#b88cff;
+text-shadow:0 0 20px #7b2cff;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.hero{
+text-align:center;
+padding:100px 20px;
+}
+
+.tag{
+display:inline-block;
+padding:10px 20px;
+border:1px solid #7b2cff;
+border-radius:30px;
+color:#cba8ff;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:900;
+line-height:1.1;
+}
+
+.gradient{
+background:linear-gradient(90deg,#c58cff,#7b2cff,#4db8ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+max-width:700px;
+margin:20px auto;
+color:#aaa;
+font-size:18px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:linear-gradient(90deg,#8d4dff,#6b2dff);
+border-radius:40px;
+text-decoration:none;
+color:white;
+box-shadow:0 0 25px #7b2cff;
+}
+
+.categories{
+padding:40px 20px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.cat{
+padding:15px 25px;
+border-radius:40px;
+background:#111;
+border:1px solid #7b2cff;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-top:40px;
+margin-bottom:30px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+padding:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:#0d0818;
+border:1px solid #7b2cff;
+border-radius:20px;
+padding:25px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px #7b2cff;
+}
+
+.card h3{
+color:#cba8ff;
+margin-bottom:10px;
+}
+
+.price{
+font-size:28px;
+font-weight:bold;
+margin:15px 0;
+}
+
+.buy{
+display:inline-block;
+padding:10px 20px;
+background:#7b2cff;
+border-radius:30px;
+text-decoration:none;
+color:white;
+}
+
+.team{
+padding:80px 20px;
+text-align:center;
+}
+
+.team-box{
+max-width:800px;
+margin:auto;
+padding:30px;
+border:1px solid #7b2cff;
+border-radius:20px;
+background:#0d0818;
+}
+
+footer{
+margin-top:60px;
+padding:25px;
+text-align:center;
+border-top:1px solid #7b2cff;
+}
+
+.chat{
+position:fixed;
+right:20px;
+bottom:20px;
+width:65px;
+height:65px;
+border-radius:50%;
+background:linear-gradient(45deg,#7b2cff,#4db8ff);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+box-shadow:0 0 25px #7b2cff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">ANUJSTOR</div>
+
+<div class="menu">
+<a href="#">Home</a>
+<a href="#">Store</a>
+<a href="#">Team</a>
+<a href="#">Contact</a>
+</div>
+</header>
+
+<section class="hero">
+<div class="tag">🔥 FREE FIRE PREMIUM STORE</div>
+
+<h1>
+Power Your Gameplay<br>
+With <span class="gradient">ANUJSTOR</span>
+</h1>
+
+<p>
+Top-up Diamonds, Memberships, Custom Rooms,
+Tournament Access & Premium Gaming Services.
+</p>
+
+<a href="#" class="btn">Shop Now</a>
+</section>
+
+<div class="categories">
+<div class="cat">💎 Diamonds</div>
+<div class="cat">👑 Membership</div>
+<div class="cat">🏆 Tournament</div>
+<div class="cat">🎮 Custom Room</div>
+<div class="cat">⚡ Elite Services</div>
+</div>
+
+<h2 class="section-title">Popular Products</h2>
+
+<div class="products">
+
+<div class="card">
+<h3>💎 100 Diamonds</h3>
+<div class="price">₹80</div>
+<a href="#" class="buy">Buy Now</a>
+</div>
+
+<div class="card">
+<h3>👑 Weekly Membership</h3>
+<div class="price">₹159</div>
+<a href="#" class="buy">Buy Now</a>
+</div>
+
+<div class="card">
+<h3>🏆 Tournament Entry</h3>
+<div class="price">₹50</div>
+<a href="#" class="buy">Buy Now</a>
+</div>
+
+</div>
+
+<section class="team">
+<div class="team-box">
+<h2>RAIDERS ESPORTS</h2>
+<br>
+<p>
+Official Free Fire Squad of ANUJSTOR.
+Join tournaments, custom rooms and gaming events.
+</p>
+</div>
+</section>
+
+<footer>
+© 2026 ANUJSTOR | Free Fire Premium Store
+</footer>
+
+<div class="chat">💬</div>
+
+</body>
+</html>
