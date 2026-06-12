@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Location - ANUJ FF STOR</title>
+    
+    <title>ANUJ FF STOR - Premium FreeFire Location Mods</title>
+    <meta name="description" content="Get access to premium FreeFire Max and Global Free Fire location mods, Antina locations, and Hologram mods securely at ANUJ FF STOR.">
+    <meta name="keywords" content="ANUJ FF STOR, ANUJ FF STORE, FreeFire Max Mod, Global Free Fire, Antina location, Hologram location, FreeFire paid location mod">
+    <meta name="author" content="ANUJ FF STOR">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="ANUJ FF STOR - Premium FreeFire Location Mods">
+    <meta property="og:description" content="Get access to premium FreeFire Max and Global Free Fire location mods securely at ANUJ FF STOR.">
+    <meta property="og:type" content="website">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
             --neon-purple: #b026ff;
@@ -33,26 +44,96 @@
             padding: 20px;
         }
 
+        .screen {
+            display: none;
+            width: 100%;
+            max-width: 500px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .screen.active {
+            display: flex;
+        }
+
         .container {
             background-color: var(--card-bg);
             border: 1px solid var(--neon-purple);
             border-radius: 12px;
             padding: 30px;
             width: 100%;
-            max-width: 500px;
             box-shadow: 0 0 20px var(--neon-glow);
         }
 
-        h1 {
+        h1, h2 {
             text-align: center;
             color: var(--text-color);
             margin-bottom: 25px;
-            font-size: 22px;
             text-transform: uppercase;
             letter-spacing: 1px;
             text-shadow: 0 0 10px var(--neon-purple);
         }
 
+        h1 { font-size: 22px; }
+        h2 { font-size: 20px; margin-bottom: 15px; }
+
+        p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        /* Form & Buttons */
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--neon-purple);
+            border-radius: 6px;
+            color: var(--text-color);
+            font-size: 15px;
+            outline: none;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .input-field:focus {
+            box-shadow: 0 0 10px var(--neon-glow);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 2px solid var(--neon-purple);
+            color: var(--text-color);
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--neon-purple);
+            box-shadow: 0 0 15px var(--neon-purple);
+        }
+
+        .error-msg {
+            color: #ff4d4d;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 13px;
+            display: none;
+        }
+
+        /* Option Cards Styling */
         .option-card {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid #333;
@@ -85,9 +166,9 @@
             justify-content: center;
             font-size: 20px;
             border: 1px solid var(--neon-purple);
+            overflow: hidden;
         }
 
-        /* Unique logo for paid */
         .ff-logo.unique {
             border-color: var(--neon-gold);
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
@@ -118,11 +199,11 @@
             box-shadow: 0 0 10px var(--neon-purple);
         }
 
-        /* Unique button for paid */
         .action-btn.unique-btn {
             border-color: var(--neon-gold);
             color: var(--neon-gold);
         }
+        
         .action-btn.unique-btn:hover {
             background: var(--neon-gold);
             color: #000;
@@ -139,67 +220,92 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>Select Your Mod</h1>
-
-        <div class="option-card">
-            <div class="option-info">
-                <div class="ff-logo">🔥</div>
-                <div class="option-title">FREEFIRE MAX<br><span style="color:#a3a3c2; font-size:12px;">(Antina location)</span></div>
+    <div id="screen-verify" class="screen active">
+        <div class="container">
+            <h2>Verification</h2>
+            <p>Please enter the key to access the mods.</p>
+            <div class="input-group">
+                <input type="text" id="keyInput" placeholder="Enter Key" class="input-field">
             </div>
-            <button class="action-btn" onclick="downloadFile('https://www.mediafire.com/file/2ujsmmcz90far53/ANUJ+80+HS+++4NTINA+L0C4TION.zip/file')">Get File</button>
+            <button class="btn" onclick="checkKey()">Verify</button>
+            <div id="errorMsg" class="error-msg">Incorrect key! Please try again.</div>
         </div>
-
-        <div class="option-card">
-            <div class="option-info">
-                <div class="ff-logo">💎</div>
-                <div class="option-title">GLOBL FREEFIRE<br><span style="color:#a3a3c2; font-size:12px;">(Hologram Location)</span></div>
-            </div>
-            <button class="action-btn" onclick="downloadFile('https://www.mediafire.com/file/nnz4kh85ne492dd/ANUJ+80HS+FULL+BODY+HOLOGRAM.zip/file')">Get File</button>
-        </div>
-
-        <div class="option-card">
-            <div class="option-info">
-                <div class="ff-logo">⚡</div>
-                <div class="option-title">FREEFIRE MAX<br><span style="color:#a3a3c2; font-size:12px;">(Hologram Location)</span></div>
-            </div>
-            <button class="action-btn" onclick="downloadFile('https://www.mediafire.com/file/nnz4kh85ne492dd/ANUJ+80HS+FULL+BODY+HOLOGRAM.zip/file')">Get File</button>
-        </div>
-
-        <div class="option-card">
-        <div class="option-card">
-            <div class="option-info">
-                <div class="ff-logo unique"><img src="IMG_20260612_144406.jpg" alt="FF" style="width:100%; height:100%; object-fit:contain; background:#2a2540;">
-
-
-                <div class="option-title">FREEFIRE MAX<br><span style="color:#ffd700; font-size:12px;">(PAID LOCATION)</span></div>
-            </div>
-            <button class="action-btn unique-btn" onclick="openTelegram()">Chat Now</button>
-        </div>
-
-</div>
-
-
-        <div class="option-card">
-            <div class="option-info">
-                <div class="ff-logo unique">🎯</div>
-                <div class="option-title">GLOBL FREEFIRE<br><span style="color:#ffd700; font-size:12px;">(PAID LOCATION)</span></div>
-            </div>
-            <button class="action-btn unique-btn" onclick="openTelegram()">Chat Now</button>
-        </div>
-
-        <div class="footer-text">ANUJ FF STOR &copy; 2026</div>
     </div>
 
-    <    <script>
-        function downloadFile(url) {
-            window.location.href = url;
+    <div id="screen-index" class="screen">
+        <div class="container">
+            <h1>Welcome to ANUJ FF STOR</h1>
+            <p>Get access to premium FreeFire location mods easily and securely.</p>
+            <button class="btn" onclick="goToOptions()">Go To Mods</button>
+        </div>
+    </div>
+
+    <div id="screen-options" class="screen">
+        <div class="container">
+            <h1>Select Your Mod</h1>
+
+            <div class="option-card">
+                <div class="option-info">
+                    <div class="ff-logo">🔥</div>
+                    <div class="option-title">FREEFIRE MAX<br><span style="color:#a3a3c2; font-size:12px;">(Antina location)</span></div>
+                </div>
+                <button class="action-btn" onclick="downloadFile('https://www.mediafire.com/file/2ujsmmcz90far53/ANUJ+80+HS+++4NTINA+L0C4TION.zip/file')">Get File</button>
+            </div>
+
+            <div class="option-card">
+                <div class="option-info">
+                    <div class="ff-logo">💎</div>
+                    <div class="option-title">GLOBL FREEFIRE<br><span style="color:#a3a3c2; font-size:12px;">(Hologram Location)</span></div>
+                </div>
+                <button class="action-btn" onclick="downloadFile('https://www.mediafire.com/file/nnz4kh85ne492dd/ANUJ+80HS+FULL+BODY+HOLOGRAM.zip/file')">Get File</button>
+            </div>
+
+            <div class="option-card">
+                <div class="option-info">
+                    <div class="ff-logo">⚡</div>
+                    <div class="option-title">FREEFIRE MAX<br><span style="color:#a3a3c2; font-size:12px;">(Hologram Location)</span></div>
+                </div>
+                <button class="action-btn" onclick="downloadFile('https://www.mediafire.com/file/nnz4kh85ne492dd/ANUJ+80HS+FULL+BODY+HOLOGRAM.zip/file')">Get File</button>
+            </div>
+
+            <div class="option-card">
+                <div class="option-info">
+                    <div class="ff-logo unique"><img src="IMG_20260612_144406.jpg" alt="FF" style="width:100%; height:100%; object-fit:contain; background:#2a2540;"></div>
+                    <div class="option-title">FREEFIRE MAX<br><span style="color:#ffd700; font-size:12px;">(PAID LOCATION)</span></div>
+                </div>
+                <button class="action-btn unique-btn" onclick="openTelegram()">Chat Now</button>
+            </div>
+
+            <div class="option-card">
+                <div class="option-info">
+                    <div class="ff-logo unique">🎯</div>
+                    <div class="option-title">GLOBL FREEFIRE<br><span style="color:#ffd700; font-size:12px;">(PAID LOCATION)</span></div>
+                </div>
+                <button class="action-btn unique-btn" onclick="openTelegram()">Chat Now</button>
+            </div>
+
+            <div class="footer-text">ANUJ FF STOR &copy; 2026</div>
+        </div>
+    </div>
+
+    <script>
+        // Screen Switching Logic
+        function checkKey() {
+            const key = document.getElementById('keyInput').value;
+            if (key.trim() !== "") {
+                document.getElementById('screen-verify').classList.remove('active');
+                document.getElementById('screen-index').classList.add('active');
+            } else {
+                document.getElementById('errorMsg').style.display = 'block';
+            }
         }
 
-        function openTelegram() {
-            window.open('http://t.me/ANUJVMOD?direct', '_blank');
+        function goToOptions() {
+            document.getElementById('screen-index').classList.remove('active');
+            document.getElementById('screen-options').classList.add('active');
         }
-        <script>
+
+        // Action Functions
         function downloadFile(url) {
             window.location.href = url;
         }
@@ -208,6 +314,5 @@
             window.open('http://t.me/ANUJVMOD?direct', '_blank');
         }
     </script>
-
 </body>
 </html>
